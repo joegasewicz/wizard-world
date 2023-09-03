@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Move assets
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/config.ini DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Add SFML
 find_package(SFML COMPONENTS system window graphics network audio REQUIRED)

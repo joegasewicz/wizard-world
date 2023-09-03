@@ -14,9 +14,14 @@
 #define WIZARD_WORLD_GAME_H
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
+
 
 class Game
 {
