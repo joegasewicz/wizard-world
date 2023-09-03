@@ -12,5 +12,5 @@ find_package(SFML COMPONENTS system window graphics network audio REQUIRED)
 include_directories(${SFML_INCLUDE_DIRS})
 
 
-add_executable(wizard_world main.cpp Game.cpp Game.h State.cpp State.h)
+add_executable(wizard_world main.cpp Game.cpp Game.h states/State.cpp states/State.h states/GameState.cpp states/GameState.h)
 target_link_libraries(wizard_world sfml-system sfml-window sfml-graphics sfml-network sfml-audio)

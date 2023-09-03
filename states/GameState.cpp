@@ -11,28 +11,25 @@
 */
 
 
-#ifndef WIZARD_WORLD_STATE_H
-#define WIZARD_WORLD_STATE_H
-
-#include <vector>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
+#include "GameState.h"
 
 
-class State {
-private:
-    std::vector<sf::Texture> textures;
+GameState::GameState()
+{
 
-public:
-    State();
-    virtual ~State();
+}
 
-    virtual void update() = 0;
-    virtual void render() = 0;
-};
+GameState::~GameState()
+{
 
+}
 
-#endif //WIZARD_WORLD_STATE_H
+void GameState::update()
+{
+
+}
+
+void GameState::render()
+{
+
+}

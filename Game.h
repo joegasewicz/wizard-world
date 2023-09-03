@@ -16,11 +16,13 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <stack>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include "states/State.h"
 
 
 class Game
@@ -31,9 +33,11 @@ private:
     sf::Event sfEvent;
     sf::Clock *clock;
     float dt; // How long for 1 update & render call
+    std::stack<State*> states;
 
     // initializers
     void initWindow();
+    void initStates();
 
 public:
     Game();

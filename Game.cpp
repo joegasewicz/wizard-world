@@ -20,7 +20,6 @@ void Game::initWindow()
 {
     // config
     std::ifstream ifs("config.ini");
-
     std::string title = "Wizards";
     sf::VideoMode window_bounds(624, 480);
     unsigned framerate_limit = 120;
@@ -34,10 +33,13 @@ void Game::initWindow()
         ifs >> vertical_sync_enabled;
     }
 
+    ifs.close();
+
     // window
     this->window = new sf::RenderWindow(sf::VideoMode(window_bounds), title);
     this->window->setFramerateLimit(framerate_limit);
     this->window->setVerticalSyncEnabled(vertical_sync_enabled);
+
     // events
     this->sfEvent = sf::Event();
     this->clock = new sf::Clock();
@@ -73,6 +75,9 @@ void Game::updateSFMLEvents()
 void Game::update()
 {
     this->updateSFMLEvents();
+
+    if (!this->states.empty())
+        this->states.top()->update();
 }
 
 void Game::render()
@@ -80,6 +85,8 @@ void Game::render()
     this->window->clear();
 
     // add render items here
+    if (!this->states.empty())
+        this->states.top()->render();
 
     this->window->display();
 }
@@ -92,4 +99,9 @@ void Game::run()
         this->update();
         this->render();
     }
+}
+
+void Game::initStates()
+{
+    // TODO this->states.push()
 }
